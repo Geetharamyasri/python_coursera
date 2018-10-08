@@ -21,4 +21,7 @@ def computepay(h,r,sl):
 
 p = computepay(10,20,30)
 
-print("Pay",p)
+print("Pay ",p)
+print("Work Hours ", h)
+print("Work Rate ", r)
+print("Sick Leave Hours ", sl)
