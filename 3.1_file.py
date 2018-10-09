@@ -21,4 +21,4 @@ def computepay(h,r,sl):
 
 p = computepay(10,20,30)
 
-print("Pay me ",p)
+print("Pay  ",p)
