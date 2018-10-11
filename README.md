@@ -16,5 +16,3 @@ Programming for Everybody (Getting started with Python)
 
   *Declare definition to the 3.1 Assignment*
 
-- 5.2 Assignment
-  *in progresss*
