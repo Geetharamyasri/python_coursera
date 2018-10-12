@@ -1,12 +1,12 @@
-#pierwsza wersja nieskonczona
+#problem był z inaczej dzialajaca funkcja input w python2 - raw_input
 largest = None
 smallest = None
 while True:
     num = input("Enter a number: ")
-    if num == 0: #nie dziala ze stringiem
+    if num == "done":
         break
     try:
-        num=int(num) #mimo wszystko wyrzuca blad
+        num=int(num)
     except:
         print("Podaj liczbe")
         continue
