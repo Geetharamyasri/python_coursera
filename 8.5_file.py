@@ -11,8 +11,12 @@ list = []
 
 for i in fname:
     if i.startswith("From"):
+        i = i.strip()
         list = i.split()
-        if list[0]=="From:": continue
+
+        #guardian in statement
+        if len(list) < 2 or list[0]=="From:": continue
+
         print list[1]
         count = count+1
     else: continue
