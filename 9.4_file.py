@@ -5,31 +5,39 @@
 #in the file. After the dictionary is produced, the program reads through the dictionary using a maximum loop
 #to find the most prolific committer.
 
-name = raw_input("Enter file:")
-if len(name) < 1 : name = "mbox-short.txt"
-handle = open(name)
-lista = list()
-dane = dict()
-y = list()
+def data_input():
+    name = raw_input("Enter file:")
+    if len(name) < 1 : name = "mbox-short.txt"
+    handle = open(name)
+    return handle
 
+def main():
 #create list with emails
-for line in handle:
-    if len(line)<2: continue
-    elif line.startswith("From") and not line.startswith("From:"):
-        lista = line.split()
-        x = lista[1]
-        y.append(x)
+    handle2 = data_input()
+    lista = list()
+    dane = dict()
+    y = list()
+
+    for line in handle2:
+        if len(line)<2: continue
+        elif line.startswith("From") and not line.startswith("From:"):
+            lista = line.split()
+            x = lista[1]
+            y.append(x)
 
 #create dictionary:emails and numbers of times they appear
-for i in y:
-    dane[i] = dane.get(i, 0)+1
+    for i in y:
+        dane[i] = dane.get(i, 0)+1
 
 #maximum loop
-bigemail = 0
-bigcount = 0
+    bigemail = 0
+    bigcount = 0
 
-for word, count in dane.items():
-    if count > bigcount:
-        bigcount = count
-        bigemail = word
-print bigemail, bigcount
+    for word, count in dane.items():
+        if count > bigcount:
+            bigcount = count
+            bigemail = word
+    print "The most pro commiter: ", bigemail, bigcount
+
+if __name__=="__main__":
+    main()
